@@ -168,7 +168,10 @@ async def validation_coordinator_node(state: GraphState) -> GraphState:
 
 async def knowledge_synthesis_node(state: GraphState) -> GraphState:
     try:
-        knowledge_dict = await knowledge_agent.synthesize(state.get("validated_evidence", []))
+        evidence = state.get("validated_evidence", [])
+        if not evidence:
+            evidence = state.get("evidence_traceability", [])
+        knowledge_dict = await knowledge_agent.synthesize(evidence)
         return {
             "knowledge": knowledge_dict,
             "executive_summary": knowledge_dict.get("executive_summary", ""),

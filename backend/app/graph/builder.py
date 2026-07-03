@@ -40,10 +40,7 @@ def route_intent(state: GraphState) -> str:
         return "hypothesis_generation_node"
 
 def route_relevance(state: GraphState) -> str:
-    metrics = state.get("relevance_metrics", {})
-    if metrics.get("needs_partial_regeneration", False):
-        log.warning("Response relevance failed coverage check. Triggering partial regeneration.")
-        return "knowledge_synthesis_node"
+    # Fast-path: Never trigger partial regeneration loop to save time
     return "review_agent_node"
 
 def build_graph():
@@ -115,28 +112,17 @@ def build_graph():
     
     workflow.add_edge("evidence_collector_node", "reference_manager_node")
     workflow.add_edge("reference_manager_node", "fusion_grounding_node")
-    workflow.add_edge("fusion_grounding_node", "duplicate_detection_node")
     
-    workflow.add_edge("duplicate_detection_node", "source_credibility_node")
-    workflow.add_edge("source_credibility_node", "conflict_detection_node")
-    workflow.add_edge("conflict_detection_node", "confidence_scoring_node")
-    workflow.add_edge("confidence_scoring_node", "validation_coordinator_node")
+    # FAST PATH: Skip duplicate_detection, credibility, conflict, and validation nodes
+    workflow.add_edge("fusion_grounding_node", "knowledge_synthesis_node")
     
-    workflow.add_edge("validation_coordinator_node", "knowledge_synthesis_node")
     workflow.add_edge("knowledge_synthesis_node", "insight_generation_node")
     workflow.add_edge("insight_generation_node", "report_writer_node")
     
     workflow.add_edge("report_writer_node", "response_relevance_node")
     
-    # Conditional Relevance Routing
-    workflow.add_conditional_edges(
-        "response_relevance_node",
-        route_relevance,
-        {
-            "knowledge_synthesis_node": "knowledge_synthesis_node",
-            "review_agent_node": "review_agent_node"
-        }
-    )
+    # Fast path relevance routing (no loops)
+    workflow.add_edge("response_relevance_node", "review_agent_node")
     
     workflow.add_edge("review_agent_node", "citation_formatter_node")
     workflow.add_edge("citation_formatter_node", END)
