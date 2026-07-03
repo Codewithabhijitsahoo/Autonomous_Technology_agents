@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { ChatInput } from './components/ChatInput';
 import { ChatMessage } from './components/ChatMessage';
 import { EmptyState } from './components/EmptyState';
-import { useChatStore, type Source, type ResearchStage } from './store/useChatStore';
+import { useChatStore, type ResearchStage } from './store/useChatStore';
 
 
 
@@ -76,8 +76,10 @@ export default function App() {
     });
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      
       // Call Backend API
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: text })
