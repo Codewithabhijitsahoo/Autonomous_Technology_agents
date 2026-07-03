@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+@layer base {
+  :root {
+    --background: #FFFFFF;
+    --card: #F8FAFC;
+    --border: #E2E8F0;
+    --primary: #10A37F;
+    --primary-foreground: #FFFFFF;
+    --foreground: #0F172A;
+    --muted: #94A3B8;
+    --muted-foreground: #475569;
+  }
+
+  .dark {
+    --background: #0B0B0C;
+    --card: #151515;
+    --border: #2A2A2A;
+    --primary: #10A37F;
+    --primary-foreground: #FFFFFF;
+    --foreground: #FFFFFF;
+    --muted: #A1A1AA;
+    --muted-foreground: #9CA3AF;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar for a premium look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Markdown Styles */
+.markdown-body {
+  @apply text-base leading-relaxed;
+}
+.markdown-body p {
+  @apply mb-4 last:mb-0;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  @apply font-bold mt-6 mb-4;
+}
+.markdown-body h1 { @apply text-2xl; }
+.markdown-body h2 { @apply text-xl; }
+.markdown-body h3 { @apply text-lg; }
+.markdown-body ul {
+  @apply list-disc list-outside ml-6 mb-4;
+}
+.markdown-body ol {
+  @apply list-decimal list-outside ml-6 mb-4;
+}
+.markdown-body li {
+  @apply mb-1;
+}
+.markdown-body blockquote {
+  @apply border-l-4 border-border pl-4 italic text-muted;
+}
+.markdown-body a {
+  @apply text-primary hover:underline;
+}
+.markdown-body pre {
+  @apply bg-card border border-border rounded-md p-4 overflow-x-auto my-4;
+}
+.markdown-body code {
+  @apply font-mono text-sm bg-card border border-border px-1 py-0.5 rounded text-foreground;
+}
+.markdown-body pre code {
+  @apply bg-transparent border-none p-0 text-foreground;
+}
+.markdown-body table {
+  @apply w-full border-collapse my-4;
+}
+.markdown-body th, .markdown-body td {
+  @apply border border-border px-4 py-2 text-left;
+}
+.markdown-body th {
+  @apply bg-card;
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, var(--card) 4%, var(--border) 25%, var(--card) 36%);
+  background-size: 1000px 100%;
+}
