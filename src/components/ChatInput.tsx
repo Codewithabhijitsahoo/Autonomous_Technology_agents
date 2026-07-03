@@ -97,7 +97,7 @@ export function ChatInput({ onSend }: { onSend: (text: string) => void }) {
       </div>
       <div className="text-center mt-3">
         <p className="text-xs text-muted">
-          Deep Research AI can make mistakes. Verify important information. • built by <a href="https://www.linkedin.com/in/abhijit-sahoo-3a2872294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">abhijit sahoo with ❤️</a>
+          Deep Research AI can make mistakes. Verify important information.
         </p>
       </div>
     </div>
