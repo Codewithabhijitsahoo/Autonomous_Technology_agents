@@ -7,6 +7,7 @@ from app.tools.arxiv_search import search_arxiv
 from app.tools.news_search import search_news
 from app.schemas.evidence import EvidenceItem
 from app.utils.logger import log
+from app.services.early_stopping_service import EarlyStoppingService
 
 class ResearchOrchestrator:
     """
@@ -20,6 +21,7 @@ class ResearchOrchestrator:
             "Research Papers": search_arxiv,
             "News Search": search_news
         }
+        self.early_stopping_service = EarlyStoppingService()
 
     async def execute_plan(self, query: str, recommended_tools: List[str]) -> Dict[str, Any]:
         """
@@ -45,25 +47,51 @@ class ResearchOrchestrator:
 
         start_time = time.time()
         # Execute tools independently and concurrently
-        results = await asyncio.gather(*tasks_to_run)
+        completed_tools = set()
+        failed_tools = set()
+        pending_tools = set(recommended_tools)
+        raw_evidence = []
+        
+        # Use asyncio.as_completed for early stopping evaluation
+        pending_tasks = [asyncio.create_task(task) for task in tasks_to_run]
+        
+        while pending_tasks:
+            done, pending_tasks = await asyncio.wait(pending_tasks, return_when=asyncio.FIRST_COMPLETED)
+            
+            for task in done:
+                try:
+                    tool_name, status, data = task.result()
+                    pending_tools.discard(tool_name)
+                    
+                    if status == "success":
+                        completed_tools.add(tool_name)
+                        raw_evidence.extend(data)
+                    else:
+                        failed_tools.add(f"{tool_name}: {data}")
+                        
+                except Exception as e:
+                    log.error(f"Task encountered an exception: {e}")
+                    
+            # Evaluate Early Stopping
+            if self.early_stopping_service.should_stop_search(
+                collected_evidence=raw_evidence,
+                completed_tools=completed_tools,
+                pending_tools=pending_tools,
+                failed_tools=failed_tools
+            ):
+                # Cancel all remaining tasks
+                for task in pending_tasks:
+                    task.cancel()
+                log.info("Early stopping triggered. Cancelled remaining search tasks.")
+                break
+                
         duration = time.time() - start_time
         log.info(f"Research Orchestrator finished in {duration:.4f}s")
         
-        completed_tools = []
-        failed_tools = []
-        raw_evidence = []
-        
-        for tool_name, status, data in results:
-            if status == "success":
-                completed_tools.append(tool_name)
-                raw_evidence.extend(data)
-            else:
-                failed_tools.append(f"{tool_name}: {data}")
-
         return {
             "research_results": raw_evidence,
-            "completed_tools": completed_tools,
-            "failed_tools": failed_tools,
+            "completed_tools": list(completed_tools),
+            "failed_tools": list(failed_tools),
             "duration": duration
         }
 
@@ -77,15 +105,31 @@ class ResearchOrchestrator:
             await asyncio.sleep(delay)
             
         log.info(f"Tool started: {name}")
-        try:
-            start_time = time.time()
-            res = await func(query)
-            dur = time.time() - start_time
-            log.info(f"Tool completed: {name} - Duration: {dur:.2f}s - Found {len(res)} results.")
-            return (name, "success", res)
-        except Exception as e:
-            log.error(f"Tool failed: {name} - Reason: {e}")
-            return (name, "error", str(e))
+        
+        # TASK 4: Automatic Search Fallback
+        fallback_chain = []
+        if name == "Web Search":
+            fallback_chain = [("News Search", self.tool_map.get("News Search")), ("Wikipedia", self.tool_map.get("Wikipedia"))]
+        elif name == "News Search":
+            fallback_chain = [("Web Search", self.tool_map.get("Web Search")), ("Wikipedia", self.tool_map.get("Wikipedia"))]
+            
+        attempts = [(name, func)] + fallback_chain
+        
+        for tool_name, tool_func in attempts:
+            if not tool_func: continue
+            try:
+                start_time = time.time()
+                res = await tool_func(query)
+                dur = time.time() - start_time
+                if res and len(res) > 0:
+                    log.info(f"Tool completed: {tool_name} - Duration: {dur:.2f}s - Found {len(res)} results.")
+                    return (tool_name, "success", res)
+                else:
+                    log.warning(f"Tool {tool_name} returned 0 results. Trying next fallback.")
+            except Exception as e:
+                log.error(f"Tool failed: {tool_name} - Reason: {e}")
+                
+        return (name, "error", "All search tools in fallback chain failed or returned 0 results.")
 
 class EvidenceCollector:
     """

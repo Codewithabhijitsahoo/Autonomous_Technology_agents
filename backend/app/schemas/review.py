@@ -17,7 +17,6 @@ class Issue(BaseModel):
     suggested_fix: str = Field(description="Suggested fix or actual fix applied")
 
 class ReviewResult(BaseModel):
-    reviewed_report: str = Field(description="The final auto-corrected report text")
     quality_scores: QualityScores = Field(description="Detailed quality scores")
     strengths: List[str] = Field(description="Strengths of the report")
     weaknesses: List[str] = Field(description="Weaknesses of the report")

@@ -1,24 +1,43 @@
 import time
-from app.services.gemini_service import GeminiService
-from app.schemas.intent_schema import IntentSchema
-from app.prompts.intent_router_prompt import INTENT_ROUTER_SYSTEM_PROMPT
+from typing import Dict, Any
 from app.utils.logger import log
 
 class IntentRouterAgent:
-    def __init__(self, gemini_service: GeminiService):
-        self.gemini_service = gemini_service
+    def __init__(self):
+        # The IntentRouterAgent now performs pure routing without LLM calls.
+        pass
 
-    async def route_intent(self, query: str) -> dict:
-        log.info("IntentRouterAgent analyzing query.")
+    def route_intent(self, structured_query: Dict[str, Any]) -> dict:
+        log.info("IntentRouterAgent routing based on structured query.")
         start_time = time.time()
+        
         try:
-            res: IntentSchema = await self.gemini_service.structured_chat(
-                prompt=f"Classify this query: {query}",
-                schema=IntentSchema,
-                system_prompt=INTENT_ROUTER_SYSTEM_PROMPT
-            )
-            log.info(f"IntentRouterAgent finished in {time.time() - start_time:.2f}s")
-            return res.model_dump()
+            intent = structured_query.get("intent", "deep_research").lower()
+            confidence = structured_query.get("confidence", 1.0)
+            requires_research = structured_query.get("needs_research", True)
+            
+            # Logic: If confidence is very low, force deep research to ensure accuracy
+            if confidence < 0.4:
+                intent = "deep_research"
+                
+            # Direct mapping from Intent to Node mode
+            if intent == "casual_chat" and not requires_research:
+                mode = "casual_chat"
+                research_score = 0
+            elif intent == "knowledge_answer" and not requires_research:
+                mode = "knowledge_answer"
+                research_score = 50
+            else:
+                mode = "deep_research"
+                research_score = 100
+                
+            log.info(f"IntentRouterAgent finished in {time.time() - start_time:.4f}s. Routed to: {mode}")
+            
+            return {
+                "intent": intent,
+                "research_score": research_score,
+                "mode": mode
+            }
         except Exception as e:
             log.error(f"IntentRouterAgent error: {e}")
             raise e

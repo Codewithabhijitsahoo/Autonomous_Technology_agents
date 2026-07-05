@@ -21,10 +21,13 @@ class PlannerAgent:
         
         try:
             # We call the structured chat from GeminiService to enforce JSON output matching the schema
+            # TASK 3: Improve Search Query Generation
+            prompt = f"Create a research plan for the following query: {query}\n\nIMPORTANT: Do NOT generate one broad search task. Instead, generate multiple highly focused search tasks (e.g. 5-10 tasks). Every entity, person, or sub-topic should have its own optimized search query mapping directly to available search tools (Web Search, Wikipedia, Arxiv, News)."
             plan: ResearchPlanSchema = await self.gemini_service.structured_chat(
-                prompt=f"Create a detailed research plan for the following query: {query}",
+                prompt=prompt,
                 schema=ResearchPlanSchema,
-                system_prompt=PLANNER_SYSTEM_PROMPT
+                system_prompt=PLANNER_SYSTEM_PROMPT,
+                task_type="planning"
             )
             
             duration = time.time() - start_time

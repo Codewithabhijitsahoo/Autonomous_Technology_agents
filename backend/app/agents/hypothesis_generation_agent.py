@@ -18,13 +18,18 @@ class HypothesisGenerationAgent:
         log.info("HypothesisGenerationAgent starting.")
         start_time = time.time()
         try:
-            res: HypothesisSchema = await self.gemini_service.structured_chat(
-                prompt=f"Generate a hypothesis for this structured query: {structured_query}",
-                schema=HypothesisSchema,
-                system_prompt="You are a Hypothesis Generation Agent. Provide a preliminary internal answer and assumptions based on your internal knowledge."
+            prompt = f"Generate a research objective, key entities to investigate, and assumptions requiring verification for this query: {structured_query}\n\nIMPORTANT: Do NOT invent facts. Do NOT include model names, benchmark numbers, release details, or pricing unless already present in the user query. The hypothesis must guide research, not answer the question."
+            res = await self.gemini_service.chat(
+                prompt=prompt,
+                task_type="deep_reasoning"
             )
             log.info(f"HypothesisGenerationAgent finished in {time.time() - start_time:.2f}s")
-            return res.model_dump()
+            return {
+                "initial_explanation": "Research objective initialized.",
+                "assumptions": ["Assumptions generated to guide research."],
+                "possible_answer": res,
+                "expected_direction": "Execute search plan."
+            }
         except Exception as e:
             log.error(f"HypothesisGenerationAgent error: {e}")
             raise e

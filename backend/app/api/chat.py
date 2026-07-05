@@ -2,8 +2,9 @@ import time
 import json
 from fastapi import APIRouter, HTTPException
 from app.models.chat import ChatRequest, ChatResponse
-from app.graph.builder import graph
+from app.services.workflow_safety_manager import WorkflowSafetyManager
 from app.utils.logger import log
+import uuid
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -30,10 +31,19 @@ async def chat_endpoint(request: ChatRequest):
         log.info("Graph execution started")
         start_time = time.time()
         
-        final_state = await graph.ainvoke(initial_state)
+        # Thread ID for checkpointing
+        thread_id = str(uuid.uuid4())
+        safety_manager = WorkflowSafetyManager()
+        
+        # Phase 5: Execute via Safety Manager
+        final_state = await safety_manager.execute_safely(initial_state, thread_id)
         
         duration = time.time() - start_time
         log.info(f"Graph completion successful - Total Duration: {duration:.4f}s")
+        
+        # Phase 5: Resource Management (Cleanup checkpoints to avoid memory leaks)
+        from app.graph.builder import memory_saver
+        memory_saver.storage.pop(thread_id, None)
         
         if final_state.get("errors"):
             log.warning(f"Graph executed with errors: {final_state['errors']}")

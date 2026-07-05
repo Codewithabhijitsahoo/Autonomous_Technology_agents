@@ -17,17 +17,23 @@ class FusionGroundingAgent:
         self.gemini_service = gemini_service
 
     async def fuse(self, hypothesis_draft: dict, normalized_evidence: list) -> dict:
-        log.info("FusionGroundingAgent starting.")
+        log.info("FusionGroundingAgent starting (Fast Path - LLM Skipped).")
         start_time = time.time()
         try:
-            prompt = f"Hypothesis Draft:\n{hypothesis_draft}\n\nEvidence:\n{normalized_evidence}"
-            res: GroundedDraftSchema = await self.gemini_service.structured_chat(
-                prompt=prompt,
-                schema=GroundedDraftSchema,
-                system_prompt="You are a Fusion/Grounding Agent. Compare the hypothesis draft with the collected evidence. Annotate supported, unsupported, missing, and contradictory facts. Produce an enhanced draft."
-            )
+            # TASK 2: Merge Duplicate Reasoning
+            # Skip the extra 20s LLM roundtrip. Just pass the raw text down to Knowledge Synthesis.
+            enhanced_draft = f"Hypothesis:\n{hypothesis_draft}\n\nEvidence:\n{normalized_evidence}"
+            
+            res_dump = {
+                "supported_statements": [],
+                "unsupported_statements": [],
+                "missing_facts": [],
+                "contradictions": [],
+                "outdated_information": [],
+                "enhanced_draft_content": enhanced_draft
+            }
             log.info(f"FusionGroundingAgent finished in {time.time() - start_time:.2f}s")
-            return res.model_dump()
+            return res_dump
         except Exception as e:
             log.error(f"FusionGroundingAgent error: {e}")
             raise e

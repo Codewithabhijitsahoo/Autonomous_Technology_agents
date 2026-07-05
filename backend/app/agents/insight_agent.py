@@ -6,6 +6,7 @@ from app.services.insight_service import InsightService
 from app.prompts.insight_prompt import INSIGHT_GENERATION_PROMPT
 from app.schemas.insight import StructuredInsights
 from app.utils.logger import log
+from app.services.prompt_builder_service import prompt_builder
 
 class InsightGenerationAgent:
     """Agent responsible for reasoning over synthesized knowledge and extracting insights."""
@@ -21,9 +22,8 @@ class InsightGenerationAgent:
             log.warning("No knowledge provided for insight generation.")
             return {}
 
-        # Limit JSON length just in case it's absurdly large, though Gemini context is 1M+ tokens
-        knowledge_json = json.dumps(knowledge, indent=2)
-        prompt = f"Analyze the following synthesized knowledge to generate deep insights:\n\n{knowledge_json}"
+        # Phase 6: Use PromptBuilder to generate a lean insight prompt
+        prompt = prompt_builder.build_insight_prompt(knowledge, "Generate deep insights from this synthesized knowledge.")
         
         for attempt in range(retries + 1):
             try:

@@ -11,6 +11,8 @@ class GraphState(TypedDict, total=False):
     errors: Annotated[List[str], operator.add]
     sources: Annotated[List[str], operator.add]
     execution_time: float
+    subtask_evidence: List[Dict[str, Any]]
+
     
     # V2 Architecture Additions
     structured_query: Dict[str, Any]

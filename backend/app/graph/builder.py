@@ -1,4 +1,5 @@
 from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.memory import MemorySaver
 from app.graph.state import GraphState
 from app.graph.nodes import (
     query_understanding_node,
@@ -127,8 +128,9 @@ def build_graph():
     workflow.add_edge("review_agent_node", "citation_formatter_node")
     workflow.add_edge("citation_formatter_node", END)
     
-    compiled = workflow.compile()
-    log.info("LangGraph V3 compilation successful.")
-    return compiled
+    memory = MemorySaver()
+    compiled = workflow.compile(checkpointer=memory)
+    log.info("LangGraph V3 compilation successful (with MemorySaver Checkpoints).")
+    return compiled, memory
 
-graph = build_graph()
+graph, memory_saver = build_graph()

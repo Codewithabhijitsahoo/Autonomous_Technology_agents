@@ -1,0 +1,159 @@
+LLM Calls: 0
+
+Tools: 137
+2026-07-04 23:13:30 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 0.89s - Found 0 results.
+2026-07-04 23:13:32 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Developer Documentation Search - Duration: 0.66s - Found 0 results.
+2026-07-04 23:13:32 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 0.71s - Found 3 results.
+2026-07-04 23:13:33 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 1.21s - Found 0 results.
+2026-07-04 23:25:12 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 1.05s - Found 3 results.
+2026-07-04 23:25:14 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Developer Documentation Search - Duration: 0.66s - Found 0 results.
+2026-07-04 23:25:20 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 4.40s - Found 0 results.
+2026-07-04 23:25:25 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 11.20s - Found 5 results.
+2026-07-04 23:46:47 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 1.02s - Found 3 results.
+2026-07-04 23:46:48 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Developer Documentation Search - Duration: 0.86s - Found 3 results.
+2026-07-04 23:46:49 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 0.91s - Found 0 results.
+2026-07-04 23:46:49 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 1.40s - Found 0 results.
+2026-07-04 23:46:50 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: News Search - Duration: 2.09s - Found 3 results.
+2026-07-05 07:26:43 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 1.48s - Found 0 results.
+2026-07-05 07:26:44 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Developer Documentation Search - Duration: 0.78s - Found 3 results.
+2026-07-05 07:26:45 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 0.94s - Found 3 results.
+2026-07-05 07:26:45 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 1.75s - Found 0 results.
+2026-07-05 07:26:46 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: News Search - Duration: 2.16s - Found 3 results.
+2026-07-05 07:37:41 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 1.08s - Found 0 results.
+2026-07-05 07:37:45 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 1.00s - Found 0 results.
+2026-07-05 07:37:47 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 2.14s - Found 0 results.
+2026-07-05 07:44:24 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Web Search - Duration: 2.51s - Found 3 results.
+2026-07-05 07:44:25 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Developer Documentation Search - Duration: 1.98s - Found 0 results.
+2026-07-05 07:44:25 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: Official Blogs Search - Duration: 2.01s - Found 0 results.
+2026-07-05 07:44:27 | INFO     | app.services.research_orchestrator:run_tool_safely:90 - Tool completed: GitHub Search - Duration: 3.80s - Found 0 results.
+2026-07-05 08:58:10 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: GitHub Search - Duration: 3.34s - Found 0 results.
+2026-07-05 08:58:12 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 5.20s - Found 3 results.
+2026-07-05 09:14:06 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 1.96s - Found 2 results.
+2026-07-05 09:14:07 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: GitHub Search - Duration: 2.83s - Found 0 results.
+2026-07-05 09:14:08 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Official Source Reader - Duration: 3.88s - Found 3 results.
+2026-07-05 09:44:57 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 1.21s - Found 3 results.
+2026-07-05 09:44:58 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Arxiv Search - Duration: 1.87s - Found 2 results.
+2026-07-05 09:49:50 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Developer Documentation Search - Duration: 3.99s - Found 3 results.
+2026-07-05 10:14:56 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 1.74s - Found 3 results.
+2026-07-05 10:14:59 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: GitHub Search - Duration: 4.59s - Found 1 results.
+2026-07-05 10:33:28 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: GitHub Search - Duration: 1.53s - Found 0 results.
+2026-07-05 10:33:28 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 1.58s - Found 3 results.
+2026-07-05 10:38:30 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Developer Documentation Search - Duration: 4.15s - Found 3 results.
+2026-07-05 12:27:23 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Web Search - Duration: 4.72s - Found 3 results.
+2026-07-05 12:57:25 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 4.24s - Found 3 results.
+2026-07-05 13:10:46 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: News Search - Duration: 2.05s - Found 3 results.
+2026-07-05 13:10:46 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: GitHub Search - Duration: 2.39s - Found 0 results.
+2026-07-05 13:16:11 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: DDGS Search - Duration: 4.75s - Found 3 results.
+2026-07-05 13:16:11 | INFO     | app.services.research_orchestrator:run_tool_safely:170 - Tool completed: Arxiv Search - Duration: 4.94s - Found 2 results.
+2026-07-05 18:32:39 | INFO     | app.services.research_orchestrator:run_tool_safely:84 - Tool completed: Web Search - Duration: 0.82s - Found 0 results.
+2026-07-05 18:32:41 | INFO     | app.services.research_orchestrator:run_tool_safely:84 - Tool completed: News Search - Duration: 1.61s - Found 3 results.
+2026-07-05 18:53:00 | INFO     | app.services.research_orchestrator:run_tool_safely:84 - Tool completed: Web Search - Duration: 1.28s - Found 0 results.
+2026-07-05 18:58:13 | INFO     | app.services.research_orchestrator:run_tool_safely:84 - Tool completed: Web Search - Duration: 0.76s - Found 3 results.
+2026-07-05 19:25:55 | INFO     | app.services.research_orchestrator:run_tool_safely:97 - Tool completed: Web Search - Duration: 1.71s - Found 3 results.
+2026-07-05 19:26:09 | INFO     | app.services.research_orchestrator:run_tool_safely:97 - Tool completed: Wikipedia - Duration: 13.68s - Found 2 results.
+
+Nodes: 833
+2026-07-05 17:01:05 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 4.80s
+2026-07-05 18:29:44 | INFO     | app.agents.query_understanding_agent:understand_query:40 - QueryUnderstandingAgent finished in 7.12s
+2026-07-05 18:29:51 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 6.43s
+2026-07-05 18:32:05 | INFO     | app.agents.query_understanding_agent:understand_query:40 - QueryUnderstandingAgent finished in 10.12s
+2026-07-05 18:32:17 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 11.92s
+2026-07-05 18:32:27 | INFO     | app.agents.hypothesis_generation_agent:generate_hypothesis:26 - HypothesisGenerationAgent finished in 10.83s
+2026-07-05 18:32:41 | INFO     | app.services.research_orchestrator:execute_plan:50 - Research Orchestrator finished in 3.6220s
+2026-07-05 18:32:41 | INFO     | app.agents.evidence_collector_agent:collect_and_organize:24 - Collection completed in 0.0028s. Total collected: 3
+2026-07-05 18:33:02 | INFO     | app.agents.fusion_grounding_agent:fuse:29 - FusionGroundingAgent finished in 20.77s
+2026-07-05 18:35:40 | INFO     | app.agents.knowledge_synthesis_agent:synthesize:46 - Knowledge synthesis completed in 157.3260s.
+2026-07-05 18:35:56 | INFO     | app.agents.insight_agent:generate_insights:40 - InsightGenerationAgent completed in 16.6738s. Generated 4 insights.
+2026-07-05 18:35:56 | INFO     | app.graph.nodes:report_writer_node:313 - Node execution started: report_writer_node
+2026-07-05 18:36:18 | INFO     | app.agents.report_writer_agent:write_report:62 - ReportWriterAgent completed in 21.8992s.
+2026-07-05 18:36:29 | INFO     | app.agents.response_relevance_agent:check_relevance:28 - ResponseRelevanceAgent finished in 11.29s
+2026-07-05 18:36:30 | INFO     | app.graph.nodes:review_agent_node:342 - Node execution started: review_agent_node
+2026-07-05 18:40:00 | INFO     | app.agents.review_agent:review:45 - ReviewAgent completed in 210.7177s. Score: 90
+2026-07-05 18:40:00 | INFO     | app.agents.citation_formatter_agent:format_citations:32 - CitationFormatterAgent finished in 0.00s
+2026-07-05 18:41:51 | INFO     | app.agents.query_understanding_agent:understand_query:40 - QueryUnderstandingAgent finished in 9.52s
+2026-07-05 18:41:57 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 5.31s
+2026-07-05 18:52:23 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 14.67s
+2026-07-05 18:52:46 | INFO     | app.agents.hypothesis_generation_agent:generate_hypothesis:26 - HypothesisGenerationAgent finished in 23.23s
+2026-07-05 18:53:02 | INFO     | app.services.research_orchestrator:execute_plan:50 - Research Orchestrator finished in 3.2857s
+2026-07-05 18:53:02 | INFO     | app.agents.evidence_collector_agent:collect_and_organize:24 - Collection completed in 0.0000s. Total collected: 0
+2026-07-05 18:53:02 | INFO     | app.agents.fusion_grounding_agent:fuse:35 - FusionGroundingAgent finished in 0.00s
+2026-07-05 18:53:02 | INFO     | app.graph.nodes:report_writer_node:326 - Node execution started: report_writer_node
+2026-07-05 18:53:12 | INFO     | app.agents.response_relevance_agent:check_relevance:28 - ResponseRelevanceAgent finished in 9.64s
+2026-07-05 18:53:12 | INFO     | app.graph.nodes:review_agent_node:356 - Node execution started: review_agent_node
+2026-07-05 18:53:34 | INFO     | app.agents.review_agent:review:45 - ReviewAgent completed in 22.7038s. Score: 100
+2026-07-05 18:53:34 | INFO     | app.agents.citation_formatter_agent:format_citations:32 - CitationFormatterAgent finished in 0.00s
+2026-07-05 18:57:32 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 14.17s
+2026-07-05 18:57:57 | INFO     | app.agents.hypothesis_generation_agent:generate_hypothesis:26 - HypothesisGenerationAgent finished in 25.22s
+2026-07-05 18:58:13 | INFO     | app.services.research_orchestrator:execute_plan:50 - Research Orchestrator finished in 0.7672s
+2026-07-05 18:58:13 | INFO     | app.agents.evidence_collector_agent:collect_and_organize:24 - Collection completed in 0.0033s. Total collected: 3
+2026-07-05 18:58:13 | INFO     | app.agents.fusion_grounding_agent:fuse:35 - FusionGroundingAgent finished in 0.00s
+2026-07-05 18:58:35 | INFO     | app.graph.nodes:report_writer_node:326 - Node execution started: report_writer_node
+2026-07-05 18:58:42 | INFO     | app.agents.response_relevance_agent:check_relevance:28 - ResponseRelevanceAgent finished in 7.33s
+2026-07-05 18:58:42 | INFO     | app.graph.nodes:review_agent_node:356 - Node execution started: review_agent_node
+2026-07-05 18:59:13 | INFO     | app.agents.review_agent:review:45 - ReviewAgent completed in 30.7153s. Score: 100
+2026-07-05 18:59:13 | INFO     | app.agents.citation_formatter_agent:format_citations:32 - CitationFormatterAgent finished in 0.00s
+2026-07-05 19:23:19 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 13.60s
+2026-07-05 19:23:43 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 11.65s
+2026-07-05 19:24:03 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 6.02s
+2026-07-05 19:24:24 | INFO     | app.agents.query_understanding_agent:understand_query:40 - QueryUnderstandingAgent finished in 8.43s
+2026-07-05 19:24:31 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 7.38s
+2026-07-05 19:25:09 | INFO     | app.agents.query_understanding_agent:understand_query:40 - QueryUnderstandingAgent finished in 12.85s
+2026-07-05 19:25:22 | INFO     | app.agents.intent_router_agent:route_intent:20 - IntentRouterAgent finished in 13.01s
+2026-07-05 19:25:36 | INFO     | app.agents.hypothesis_generation_agent:generate_hypothesis:26 - HypothesisGenerationAgent finished in 14.08s
+2026-07-05 19:26:09 | INFO     | app.services.research_orchestrator:execute_plan:50 - Research Orchestrator finished in 15.6950s
+2026-07-05 19:26:09 | INFO     | app.agents.evidence_collector_agent:collect_and_organize:24 - Collection completed in 0.0171s. Total collected: 5
+2026-07-05 19:26:09 | INFO     | app.agents.fusion_grounding_agent:fuse:35 - FusionGroundingAgent finished in 0.00s
+
+Evidence: 0
+
+Errors: 1031
+2026-07-05 10:34:14 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Executive Summary' attempt 2 failed:
+2026-07-05 10:34:15 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Technology Highlights' attempt 2 failed:
+2026-07-05 10:34:17 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Competitor Analysis' attempt 2 failed:
+2026-07-05 10:34:18 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Market Trends' attempt 2 failed:
+2026-07-05 10:34:20 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Risk Analysis' attempt 2 failed:
+2026-07-05 10:34:21 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Recommendations' attempt 2 failed:
+2026-07-05 10:34:22 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Conclusion' attempt 2 failed:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Executive Summary failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Technology Highlights failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Competitor Analysis failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Market Trends failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Risk Analysis failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Recommendations failed completely:
+2026-07-05 10:34:22 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Conclusion failed completely:
+2026-07-05 10:38:26 | WARNING  | app.graph.nodes:search_strategy_node:162 - search_strategy_node failed, falling back to default strategy: TimeoutError()
+2026-07-05 12:27:08 | WARNING  | app.graph.nodes:planner_node:132 - planner_node failed, falling back to default plan: TimeoutError()
+2026-07-05 12:27:18 | WARNING  | app.graph.nodes:search_strategy_node:162 - search_strategy_node failed, falling back to default strategy: TimeoutError()
+2026-07-05 12:27:55 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Executive Summary' attempt 1 failed:
+2026-07-05 12:27:57 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Technology Highlights' attempt 1 failed:
+2026-07-05 12:27:58 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Competitor Analysis' attempt 1 failed:
+2026-07-05 12:28:00 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Market Trends' attempt 1 failed:
+2026-07-05 12:28:01 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Risk Analysis' attempt 1 failed:
+2026-07-05 12:28:03 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Recommendations' attempt 1 failed:
+2026-07-05 12:28:13 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Competitor Analysis' attempt 2 failed:
+2026-07-05 12:28:16 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Risk Analysis' attempt 2 failed:
+2026-07-05 12:28:18 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Recommendations' attempt 2 failed:
+2026-07-05 12:28:18 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Competitor Analysis failed completely:
+2026-07-05 12:28:18 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Risk Analysis failed completely:
+2026-07-05 12:28:18 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Recommendations failed completely:
+2026-07-05 12:57:15 | WARNING  | app.graph.nodes:planner_node:132 - planner_node failed, falling back to default plan: TimeoutError()
+2026-07-05 12:57:31 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: DDGS Search - Reason: Request timed out after 10.0s
+2026-07-05 12:57:36 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: Tavily Search - Reason: Request timed out after 15.0s
+2026-07-05 12:58:12 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Risk Analysis' attempt 1 failed:
+2026-07-05 12:58:27 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Risk Analysis' attempt 2 failed:
+2026-07-05 12:58:27 | ERROR    | app.agents.report_writer_agent:write_report:54 - Section Risk Analysis failed completely:
+2026-07-05 13:08:59 | WARNING  | app.graph.nodes:planner_node:132 - planner_node failed, falling back to default plan: TimeoutError()
+2026-07-05 13:09:17 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: DDGS Search - Reason: Request timed out after 10.0s
+2026-07-05 13:09:17 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: GitHub Search - Reason: Request timed out after 10.0s
+2026-07-05 13:09:17 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: Official Source Reader - Reason: Request timed out after 10.0s
+2026-07-05 13:09:22 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: Tavily Search - Reason: Request timed out after 15.0s
+2026-07-05 13:09:22 | ERROR    | app.services.research_orchestrator:run_tool_safely:173 - Tool failed: News Search - Reason: Request timed out after 15.0s
+2026-07-05 13:10:36 | WARNING  | app.graph.nodes:planner_node:132 - planner_node failed, falling back to default plan: TimeoutError()
+2026-07-05 13:11:22 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Market Trends' attempt 1 failed:
+2026-07-05 13:15:58 | WARNING  | app.graph.nodes:planner_node:132 - planner_node failed, falling back to default plan: TimeoutError()
+2026-07-05 13:16:10 | WARNING  | app.tools.news_search:search_news:94 - DDGS news network/connection error on attempt 1: No results found.
+2026-07-05 13:16:45 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Technology Highlights' attempt 1 failed:
+2026-07-05 13:16:47 | WARNING  | app.agents.report_writer_agent:_generate_section:83 - Section 'Recommendations' attempt 1 failed:
+2026-07-05 18:53:02 | ERROR    | app.tools.news_search:search_news:18 - News Search failed: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=AI+model+releases+OpenAI+Google+Anthropic+Meta+DeepSeek+past+two+weeks+summarize&vqd=4-263380627015004966178136865833439916041&p=-1 403 Ratelimit
+2026-07-05 18:53:02 | ERROR    | app.services.research_orchestrator:run_tool_safely:87 - Tool failed: News Search - Reason: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=AI+model+releases+OpenAI+Google+Anthropic+Meta+DeepSeek+past+two+weeks+summarize&vqd=4-263380627015004966178136865833439916041&p=-1 403 Ratelimit
+2026-07-05 18:59:13 | WARNING  | app.api.chat:chat_endpoint:39 - Graph executed with errors: ['planner_node: Timeout exceeded', "knowledge_synthesis_node: cannot access local variable 'results' where it is not associated with a value"]

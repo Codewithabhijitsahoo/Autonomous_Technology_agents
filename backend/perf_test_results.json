@@ -1,0 +1,59 @@
+[
+  {
+    "query": "Hello",
+    "duration": 26.515233039855957,
+    "status": "success",
+    "length": 35
+  },
+  {
+    "query": "How are you?",
+    "duration": 24.827112913131714,
+    "status": "success",
+    "length": 57
+  },
+  {
+    "query": "Tell me a joke",
+    "duration": 18.906593084335327,
+    "status": "success",
+    "length": 96
+  },
+  {
+    "query": "What is Python?",
+    "duration": 41.06114864349365,
+    "status": "success",
+    "length": 6026
+  },
+  {
+    "query": "Explain Machine Learning.",
+    "duration": 270.4808177947998,
+    "status": "success",
+    "length": 712
+  },
+  {
+    "query": "Difference between SQL and NoSQL.",
+    "duration": 275.75459456443787,
+    "status": "success",
+    "length": 784
+  },
+  {
+    "query": "Latest AI models.",
+    "duration": 2228.332462310791,
+    "status": "success",
+    "length": 985
+  },
+  {
+    "query": "Top AI startups this month.",
+    "duration": 57.84864020347595,
+    "status": "exception"
+  },
+  {
+    "query": "Recent Python releases.",
+    "duration": 4.060927629470825,
+    "status": "exception"
+  },
+  {
+    "query": "What are the latest AI models released in the past two weeks? Compare capabilities, context windows, pricing, benchmarks, market impact, enterprise adoption, GitHub activity, funding, competitors and future outlook.",
+    "duration": 4.055886507034302,
+    "status": "exception"
+  }
+]

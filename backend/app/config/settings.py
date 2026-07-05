@@ -25,6 +25,14 @@ class Settings(BaseSettings):
     gemini_timeout: float = 30.0
     gemini_max_retries: int = 3
     
+    # Early Stopping Configuration
+    early_stop_evidence_threshold: int = 5
+    early_stop_high_priority_tools: List[str] = ["Web Search", "Wikipedia", "Research Papers"]
+    early_stop_duplicate_ratio: float = 0.6
+    
+    # Global Workflow Safety Budget (seconds)
+    global_execution_budget: float = 180.0
+    
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
     
     @property
