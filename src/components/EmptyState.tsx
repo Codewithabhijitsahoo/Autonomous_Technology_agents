@@ -26,7 +26,7 @@ export function EmptyState({ onSelect }: { onSelect: (text: string) => void }) {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center tracking-tight"
       >
-        Deep Research Assistant
+        Deep Technology Assistant
       </motion.h1>
       
       <motion.p 

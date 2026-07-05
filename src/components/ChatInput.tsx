@@ -61,7 +61,7 @@ export function ChatInput({ onSend }: { onSend: (text: string) => void }) {
               )}
             >
               <Search className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Deep Research</span>
+              <span className="hidden sm:inline">Deep Technology</span>
             </button>
             <button 
               onClick={() => setIsWebSearch(!isWebSearch)}
@@ -97,7 +97,7 @@ export function ChatInput({ onSend }: { onSend: (text: string) => void }) {
       </div>
       <div className="text-center mt-3">
         <p className="text-xs text-muted">
-          Deep Research AI can make mistakes. Verify important information.
+          Deep Technology AI can make mistakes. Verify important information.
         </p>
       </div>
     </div>

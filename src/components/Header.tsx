@@ -11,7 +11,7 @@ export function Header() {
           <div className="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30 shadow-sm shadow-primary/20">
             <Search className="w-4.5 h-4.5 text-primary" />
           </div>
-          <span className="font-semibold text-lg text-foreground tracking-tight hidden sm:inline-block">Deep Research</span>
+          <span className="font-semibold text-lg text-foreground tracking-tight hidden sm:inline-block">Deep Technology</span>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-4">
