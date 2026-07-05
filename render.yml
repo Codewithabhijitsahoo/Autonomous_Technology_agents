@@ -1,7 +1,7 @@
 services:
   # 1. Python Backend
   - type: web
-    name: deep-ai-research-backend
+    name: deep-technology-agents-backend
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -13,7 +13,7 @@ services:
         
   # 2. React Frontend
   - type: web
-    name: deep-ai-research-ui
+    name: deep-technology-agents-ui
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
@@ -21,5 +21,5 @@ services:
       - key: VITE_API_URL
         fromService:
           type: web
-          name: deep-ai-research-backend
+          name: deep-technology-agents-backend
           envVarKey: RENDER_EXTERNAL_URL
