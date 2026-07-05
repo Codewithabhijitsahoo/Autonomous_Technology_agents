@@ -1,6 +1,6 @@
 # Deep Research Agent Backend
 
-This is the backend architecture for a production-grade Deep Research Agent. It is an advanced, autonomous AI research system powered by a multi-agent architecture. It takes a user query, formulates a comprehensive research plan, parallelizes data gathering across multiple search modalities, and rigorously evaluates the evidence before synthesizing a final, reviewed report.
+This is the backend architecture for a production-grade Deep Research Agent. It is an advanced, autonomous AI research system powered by a multi-agent architecture. It features a smart Intent Router for sub-second handling of casual queries, while routing complex tasks to a deep research pipeline. This pipeline formulates a comprehensive research plan, parallelizes data gathering across multiple search modalities, and rigorously evaluates the evidence before synthesizing a final, reviewed report.
 
 ## System Workflow Diagram
 
